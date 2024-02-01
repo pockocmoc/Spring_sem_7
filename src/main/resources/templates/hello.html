@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Hello Page!</title>
+</head>
+<body>
+<h1 th:inline="text">Привет <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
+
+<p>Нажмите <a th:href="@{/public-data}">здесь</a>, чтобы увидеть публичную страницу.</p>
+<p>Нажмите <a th:href="@{/private-data}">здесь</a>, чтобы увидеть частную страницу.</p>
+
+<p>Переход на <a th:href="@{/home}">главную</a> страницу</p>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Выход"/>
+</form>
+</body>
+</html>
